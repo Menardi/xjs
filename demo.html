@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>x.js</title>
+</head>
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		background-color: #289B32;
+	}
+
+	header {
+		width: 100%;
+		text-align: center;
+		color: #FFF;
+	}
+
+	.container {
+		margin: auto;
+		max-width: 600px;
+	}
+
+	.demo-area {
+		width: 100%;
+		background-color: #FFF;
+		padding: 20px;
+	}
+
+	.demo-area:after {
+		content:"";
+		display:table;
+		clear:both;
+	}
+
+	form, .preview {
+		width: 50%;
+		float: left;
+	}
+
+	label {
+		display: block;
+		font-weight: 700;
+		margin-top: 20px;
+	}
+</style>
+<body>
+	<div class="container">
+		<header>
+			<h1>x.js</h1>
+			<h2>Super simple two-way binding</h2>
+		</header>
+
+		<div class="demo-area">
+			<form>
+				<label for="first_name">First Name</label>
+				<input name="first_name" x="first_name">
+
+				<label for="last_name">Last Name</label>
+				<input name="last_name" x="last_name">
+
+				<label for="last_name">Gender</label>
+				<select x="gender">
+					<option value="Unspecified">Unspecified</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+
+				<label for="checkbox">Tick?</label>
+				<input type="checkbox" x="check"> Want to tick this?
+
+			</form>
+
+			<ul class="preview">
+				<li>Name: <span x="first_name"></span> <span x="last_name"></span></li>
+				<li>Gender: <span x="gender"></span></li>
+				<li>Checkbox: <span x="check"></span></li>
+			</ul>
+		</div>
+	</div>
+	<script src="x.js"></script>
+	<script type="text/javascript">
+		x.initialize();
+	</script>
+</body>
+</html>
